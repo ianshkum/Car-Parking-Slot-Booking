@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Inspect parking space</title>
+
+
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+    <link th:href="@{/css/style.css}" href="/static/css/style.css" rel="stylesheet" type="text/css"/>
+
+
+
+</head>
+
+<body style="background-color: #64a4fc;"
+
+<div th:insert="~{/fragments/header :: header}"></div>
+
+<section class="jumbotron text-left" style="background-color: lightgray;">
+    <div class="container">
+        <h1 class="jumbotron-heading" style="text-align: center; ">Parking Space Details</h1>
+    </div>
+</section>
+
+<div class="container">
+    <div class="row">
+
+        <div class="col-md-5" th:object="${parking}" method="POST">
+            <td class="w-25">
+                <img src="https://tse3.mm.bing.net/th?id=OIP.zKpmRKxLELpx3VamcTLP4AHaEK&pid=Api&P=0&w=272&h=154" class="img-fluid img-thumbnail" alt="parking">
+            </td>
+            <p th:text="'Parking Name: ' + ${parking.parkingName}"/>
+            <p th:text="'Hosted by '+ ${parking.user.userName}"/>
+            <p th:text="'Countrey: ' + ${parking.countrey}"/>
+            <p th:text="'City: ' + ${parking.city}"/>
+            <p th:text="'Adress: ' + ${parking.adress}"/>
+            <p th:text="'Price/Night: ' + ${parking.ppn}"/>
+            <p th:text="'Number of active bookings: '+ ${valid.size()}"/>
+            <p th:text="${parking.getRatting()>0 ?parking.getRatting() : 'No ratting yet'}"  />
+
+
+        </div>
+
+        <table class="table table-bordered table-striped" style="background-color: white;">
+            <thead class="thead-dark">
+            <tr>
+                <th style="background-color: #64a4fc;">Check in</th>
+                <th style="background-color: #64a4fc;">Check out</th>
+                <th style="background-color: #64a4fc;">Who made this reservation</th>
+
+
+
+
+
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr th:each="tempBookings : ${valid}">
+
+                <td th:text="${tempBookings.getCheckIn().toString().substring(0,10)}"/>
+                <td th:text="${tempBookings.getCheckOut().toString().substring(0,10)}"/>
+                <td th:text="${tempBookings.inTime.toString().substring(0,10)}"/>
+                <td th:text="${tempBookings.outTime.toString().substring(0,10)}"/>
+                <td th:text="${tempBookings.getUser().getUserName()}"/>
+
+            </tr>
+            </tbody>
+        </table>
+
+
+
+
+    </div>
+
+
+    <a th:href="@{/user/stays}" style="color: white;">Back to Parking Space List</a>
+
+</div>
+<div th:insert="~{/fragments/footer :: footer}"></div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+</html>

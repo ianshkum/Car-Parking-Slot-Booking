@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Homepage</title>
+
+
+    <!-- Bootstrap and carousel CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://getbootstrap.com/docs/4.5/examples/carousel/carousel.css"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+
+    <link th:href="@{/css/style.css}" href="/static/css/style.css" rel="stylesheet" type="text/css"/>
+
+    <!--  -->
+
+
+</head>
+<body style="background-color: #64a4fc">
+
+<div th:insert="~{/fragments/header :: header}"></div>
+
+<main role="main">
+    <!---
+
+
+
+
+    -->
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
+                     preserveAspectRatio="xMidYMid slice" focusable="false" role="img">
+
+                    <img src="https://media.istockphoto.com/vectors/cars-at-parking-lot-in-night-city-street-vector-background-flat-vector-id1267946033?k=20&m=1267946033&s=170667a&w=0&h=sXcW1n5upXvFKIjWk-UCJj3l8CGa6Wnh6LEP_576o5E="
+                         class="img-fluid img-thumbnail" alt="parking">
+                    <rect width="100%" height="100%" fill="#777"/>
+                </svg>
+                <div class="container">
+                    <div class="carousel-caption">
+                        <h2>Discover parking slots that suit you the best!</h2>
+                    </div>
+                </div>
+
+            </div>
+            <div class="carousel-item">
+                <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
+                     preserveAspectRatio="xMidYMid slice" focusable="false" role="img">
+                    <img src="https://media.istockphoto.com/vectors/colored-parked-cars-on-the-parking-vector-id538322418?k=6&m=538322418&s=170667a&w=0&h=DqGgYwHPGDgowuJjIzUDHW7RJy1hS6bapP-Av0KPLLI="
+                         class="img-fluid img-thumbnail" alt="parking">
+                    <rect width="100%" height="100%" fill="#777"/>
+                </svg>
+                <div class="container">
+                    <div class="carousel-caption">
+                        <h2>Get the best service! </h2>
+                    </div>
+                </div>
+
+            </div>
+            <div class="carousel-item">
+                <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
+                     preserveAspectRatio="xMidYMid slice" focusable="false" role="img">
+                    <img src="https://cdn2.iconfinder.com/data/icons/parking-cartoon-2/512/d324_5-512.png"
+                         class="img-fluid img-thumbnail" alt="parking">
+                    <rect width="100%" height="100%" fill="#777"/>
+                </svg>
+                <div class="container">
+                    <div class="carousel-caption">
+                        <h1>At cheapest price!</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+
+
+    <div  class="container marketing">
+
+
+
+     <h1 style="color: white; font-size: 50px">Choose the parking slot as per your convenience</h1>
+<!--        <div class="custom-featurette" style="margin-bottom: 50px" >-->
+<!--            <div class="textdiv1">-->
+<!--                <h2 class="featurette-heading">Choose the parking slot as per your convenience</h2>-->
+<!--                <p class="lead"></p>-->
+
+<!--            </div>-->
+
+        </div>
+
+
+
+
+
+
+    </div>
+
+
+    </div>
+
+
+</main>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+<div th:insert="~{/fragments/footer :: footer}"></div>
+
+</body>
+</html>

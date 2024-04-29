@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css'>
+    <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
+    <link th:href="@{/css/style.css}" href="/static/css/style.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+
+
+
+
+    <title>Contact</title>
+</head>
+<body style=" background-image: url(https://paysonutah.org/wp-content/uploads/2016/05/86-2.jpg);
+
+height: 100%;
+
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;">
+
+<div th:insert="~{/fragments/header :: header}"></div>
+
+<br>
+<br>
+<div class="d-flex flex-column sticky-footer-wrapper">
+
+
+
+    <div class="container flex-fill">
+
+        <section class="mb-4">
+
+            <!--
+                        <h2 class="h1-responsive font-weight-bold text-center my-4" style="color: white;">Contact us</h2>
+
+                        <p class="text-center w-responsive mx-auto mb-5" style="color: white;">Do you have any other inquiries? Please get in touch with us if so. Within a few hours, a member of our team will contact you to assist you</p> -->
+
+            <div style="padding-left: 200px; padding-top: 200px;">
+                <div class="row contact_form">
+
+                    <div class="col-md-9 mb-md-0 mb-5">
+
+
+                        <form action="#" id="contact-form" name="contact-form" th:action="@{/send-contact-email}" method="POST">
+
+
+                            <div class="row">
+
+
+                                <div class="col-md-6" style="margin-bottom: 2%">
+                                    <div class="md-form mb-0">
+                                        <label for="name" class=""><b>Name</b></label>
+                                        <input type="text" id="name" name="name" class="form-control" required>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="md-form mb-0">
+                                        <label for="email" class=""><b>Your email</b></label>
+                                        <input type="text" id="email" name="email" class="form-control" required>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="md-form mb-0">
+                                        <label for="subject" class=""><b>Subject</b></label>
+                                        <input type="text" id="subject" name="subject" class="form-control" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+
+
+                                <div class="col-md-12">
+
+                                    <div class="md-form" style="margin-bottom: 2%; margin-top: 2%">
+                                        <label for="message"><b>Your message</b></label>
+                                        <textarea type="text" id="message" name="message" rows="2"
+                                                  class="form-control md-textarea" required></textarea>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+
+                            <div class="text-center text-md-left " style="text-align: center; margin: auto; display: grid;">
+                                <button type="submit" class="btn btn-warning btn-lg">
+                                    Send
+                                </button>
+                            </div>
+                            <div class="status"></div>
+                        </form>
+                    </div>
+
+
+
+
+                </div>
+            </div>
+        </section>
+
+
+    </div>
+</div>
+
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+<script data-search-pseudo-elements defer src="https://use.fontawesome.com/releases/latest/js/all.js"
+        integrity="sha384-L469/ELG4Bg9sDQbl0hvjMq8pOcqFgkSpwhwnslzvVVGpDjYJ6wJJyYjvG3u8XW7"
+        crossorigin="anonymous"></script>
+
+
+<div th:insert="~{/fragments/footer :: footer}"></div>
+
+</body>
+</html>

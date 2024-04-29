@@ -1,0 +1,85 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>My favorites</title>
+
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+    <link th:href="@{/css/style.css}" href="/static/css/style.css" rel="stylesheet" type="text/css"/>
+
+    <!--  -->
+
+
+</head>
+
+<body style="background-color: #64a4fc;">
+
+<div th:insert="~{/fragments/header :: header}"></div>
+
+<div class="custom-container">
+<br>
+    <h3 style="text-align: center; color: white;">Current favorite Parking spaces</h3>
+    <br><br>
+    <table style="background-color: white;" class="table table-bordered table-striped">
+        <thead class="thead-dark">
+        <tr>
+            <th  style="background-color: #64a4fc;">Parking Space Image</th>
+            <th  style="background-color: #64a4fc;">Parking Space Name</th>
+            <th  style="background-color: #64a4fc;">Parking Space City</th>
+            <th  style="background-color: #64a4fc;">Parking Space Country</th>
+            <th  style="background-color: #64a4fc;">Price\hour</th>
+            <th  style="background-color: #64a4fc;">Rating</th>
+            <th  style="background-color: #64a4fc;">Remove from list</th>
+
+
+
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr th:each="tempFavs : ${favorites}">
+
+
+            <td class="w-25">
+                <a th:href="@{|/viewParking/${tempFavs.id}|}">
+                    <img src="https://th.bing.com/th/id/OIP.aTe2A98WS7g1d8Gy-FiCEQHaE8?pid=ImgDet&rs=1" class="img-fluid img-thumbnail" alt="parking">
+                </a>
+            </td>
+            <td th:text="${tempFavs.parkingName}"/>
+            <td th:text="${tempFavs.countrey}"/>
+            <td th:text="${tempFavs.city}"/>
+            <td th:text="${tempFavs.ppn}"/>
+            <td th:text="${tempFavs.getRatting()}"/>
+            <td text="remove">
+                <a th:href="@{'/user/savedParkings/remove/'+${tempFavs.id}}"
+                   class="btn btn-warning btn-primary">
+                    <i class="fas fa-times-circle"></i>
+
+                </a>
+            </td>
+
+
+
+
+
+
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div th:insert="~{/fragments/footer :: footer}"></div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+</html>

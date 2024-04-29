@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Homepage</title>
+
+
+    <!-- Bootstrap and carousel CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://getbootstrap.com/docs/4.5/examples/carousel/carousel.css"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+    <link th:href="@{/css/style.css}" href="/static/css/style.css" rel="stylesheet" type="text/css"/>
+
+
+    <!--  -->
+
+
+</head>
+<body>
+
+<div th:insert="~{/fragments/header :: header}"></div>
+
+<!--Problem Carousel-->
+<main role="main">
+
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
+                     preserveAspectRatio="xMidYMid slice" focusable="false" role="img">
+
+                    <img src="https://media.istockphoto.com/vectors/cars-at-parking-lot-in-night-city-street-vector-background-flat-vector-id1267946033?k=20&m=1267946033&s=170667a&w=0&h=sXcW1n5upXvFKIjWk-UCJj3l8CGa6Wnh6LEP_576o5E="
+                         class="img-fluid img-thumbnail" alt="parking">
+                    <rect width="100%" height="100%" fill="#777"/>
+                </svg>
+                <div class="container">
+                    <div class="carousel-caption">
+                        <h2>Find parking spaces which are perfectly suited for you .</h2>
+                    </div>
+                </div>
+
+            </div>
+            <div class="carousel-item">
+                <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
+                     preserveAspectRatio="xMidYMid slice" focusable="false" role="img">
+                    <img src="https://i.pinimg.com/736x/1a/ad/63/1aad6350475e4020e1a091aacb18f727.jpg"
+                         class="img-fluid img-thumbnail" alt="parking">
+                    <rect width="100%" height="100%" fill="#777"/>
+                </svg>
+                <div class="container">
+                    <div class="carousel-caption">
+                        <h2>Explore the world with our wide network of parking spaces</h2>
+                    </div>
+                </div>
+
+            </div>
+            <div class="carousel-item">
+                <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
+                     preserveAspectRatio="xMidYMid slice" focusable="false" role="img">
+                    <img src="https://i.pinimg.com/736x/e3/87/a7/e387a79aa92b5d161d8494120373611a.jpg"
+                         class="img-fluid img-thumbnail" alt="parking">
+                    <rect width="100%" height="100%" fill="#777"/>
+                </svg>
+                <div class="container">
+                    <div class="carousel-caption">
+                        <h2>Go travel!</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+
+    <!-- Marketing messaging and featurettes
+    ================================================== -->
+    <!-- Wrap the rest of the page in another container to center all the content. -->
+    <div align="center">
+        <h1>View the most popular choices below!</h1>
+    </div>
+
+    <div class="container marketing">
+
+        <!-- Three columns of text below the carousel -->
+        <div class="row">
+            <div class="col-lg-4">
+                <svg class="bd-placeholder-img rounded-circle" width="140" height="140"
+                     xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false"
+                     role="img" aria-label="Placeholder: 140x140">
+                    <title>Placeholder</title>
+                    <img src="https://hips.hearstapps.com/roa.h-cdn.co/assets/16/30/1469537010-parkinggarage-getty.jpg"
+                         class="img-fluid img-thumbnail" alt="parking">
+                    <rect width="100%" height="100%" fill="#777"/>
+
+                </svg>
+                <h5>The best currently rated parking space</h5>
+                <p><a th:href="@{'/viewParking/'+${first.id}}" class="btn btn-secondary" role="button">View details
+                    &raquo;</a></p>
+                <!--                <p><a th:href="@{|/viewParking/${second.getId()}|}" class="btn btn-secondary" role="button">View details &raquo;</a></p>-->
+
+
+            </div><!-- /.col-lg-4 -->
+
+            <div class="col-lg-4">
+                <svg class="bd-placeholder-img rounded-circle" width="140" height="140"
+                     xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false"
+                     role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title>
+                    <img src="https://uknow.uky.edu/sites/default/files/styles/uknow_story_image/public/transcript-lot-1%20%282%29.jpg"
+                         class="img-fluid img-thumbnail" alt="parking">
+                    <rect width="100%" height="100%" fill="#777"/>
+
+                </svg>
+                <h5>The second best rated parking space</h5>
+                <p><a th:href="@{'/viewParking/'+${second.id}}" class="btn btn-secondary" role="button">View details
+                    &raquo;</a></p>
+            </div><!-- /.col-lg-4 -->
+            <div class="col-lg-4">
+                <svg class="bd-placeholder-img rounded-circle" width="140" height="140"
+                     xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false"
+                     role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title>
+                    <img src="https://i.pinimg.com/originals/c8/a7/e0/c8a7e00a510b50cdf8493642c407225d.png"
+                         class="img-fluid img-thumbnail" alt="parking">
+
+                    <rect width="100%" height="100%" fill="#777"/>
+
+                </svg>
+                <h5>The third best rated parking space</h5>
+                <p><a th:href="@{'/viewParking/'+${third.id}}" class="btn btn-secondary" role="button">View details
+                    &raquo;</a></p>
+            </div><!-- /.col-lg-4 -->
+        </div><!-- /.row -->
+
+
+        <!-- START THE FEATURETTES -->
+
+        <hr class="featurette-divider">
+
+        <div class="custom-featurette" style="margin-bottom: 50px">
+            <div class="textdiv">
+                <h2 class="featurette-heading">Tokyo has been voted the most beautiful destination for this spring!</h2>
+                <p class="lead">Spring in Tokyo is arguably the best time of year to visit—and it’s all thanks to
+                    hanami. This is an incredible period in the calendar to see the capital (and Japan as a whole) at
+                    its best, with cherry blossom trees blooming all over. The temperatures are also a reason to travel
+                    in Japan at this time, with the weather being quite mild (after May, the days get hotter and in
+                    summer, Tokyo can be uncomfortably humid)..</p>
+            </div>
+            <div class="photodiv">
+
+            </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <div class="custom-featurette" style="margin-bottom: 50px">
+            <div class="textdiv1">
+                <h2 class="featurette-heading">Best Places to Visit in Europe </h2>
+                <p class="lead">From England and France to Italy and Germany, European countries are full of vibrant
+                    cities known for their museums, restaurants, nightlife and architecture. So, it comes as no surprise
+                    that deciding which spots are the best places to visit in Europe can be difficult. That's why U.S.
+                    News considered the highlights of each destination – as well as user votes and expert opinions – to
+                    round up the best vacation destinations in Europe. Use this list to help you plan your next trip,
+                    and cast your vote below to have a say in next year's list. Meanwhile, if you're searching for a
+                    European cruise, check out our Best Europe Cruise Deals, and if you're seeking lodging, head to our
+                    Best Hotels in Europe ranking » (Note: Some of the below destinations may be affected by the
+                    coronavirus outbreak. Check with the CDC and the U.S. Department of State before traveling.)</p>
+                <p><a href="https://www.europeanbestdestinations.com/">View top 10</a></p>
+            </div>
+
+            <div class="photodiv1">
+
+            </div>
+
+        </div>
+
+        <hr class="featurette-divider">
+
+        <div class="custom-featurette" style="margin-bottom: 50px">
+            <div class="textdiv2">
+                <h2 class="featurette-heading"> The best cities to have fun</h2>
+                <p class="lead">May is the perfect time to start thinking about your next short city break. The sun is
+                    shining, the days are blissfully longer and many of us have cranked out the barbecues, (or at least
+                    thought about it). But even more importantly, there are two bank holidays to take full advantage of.
+                    This is why at Oliver’s Travels we have decided to rank the most fun cities, so we can direct you to
+                    the city most suited to your style!</p>
+                <p><a href="https://www.oliverstravels.com/blog/the-most-fun-cities-in-europe/">View the top</a></p>
+
+            </div>
+
+
+            <div class="photodiv2">
+
+            </div>
+
+        </div>
+
+        <!--        <hr class="featurette-divider">-->
+
+        <!-- /END THE FEATURETTES -->
+
+    </div><!-- /.container -->
+
+    <div th:insert="~{/fragments/footer :: footer}"></div>
+
+</main>
+
+<!-- Optional JavaScript -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+<!--------------->
+
+
+</body>
+</html>
